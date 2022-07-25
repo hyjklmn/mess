@@ -29,7 +29,17 @@ export default function index() {
     return colors[parseInt(Math.random() * 2)];
   }
   function cardClick(e) {
-    e.currentTarget.style.top = -350 + "px";
+    let first = e.currentTarget.dataset.first;
+    if (
+      first &&
+      (!e.currentTarget.style.top || e.currentTarget.style.top == "0px")
+    ) {
+      e.currentTarget.style.top = -350 + "px";
+      e.currentTarget.dataset.first = false;
+    } else {
+      e.currentTarget.style.top = 0;
+      e.currentTarget.dataset.first = true;
+    }
   }
   randomNumber();
   return (
@@ -44,6 +54,7 @@ export default function index() {
               style={{ left: index * 40 + "px" }}
               className="poker-card border-box px-4 py-3"
               key={number}
+              data-first={true}
               onClick={cardClick}
             >
               <b style={{ color: c }}> {n}</b>
