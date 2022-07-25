@@ -1,0 +1,14 @@
+.comma {
+  width: 100%;
+  height: 100vh;
+  background-color: #2b88f0;
+  .comma-wrapper {
+    .comma-item {
+      background-color: rgba($color: orange, $alpha: 0.5);
+    }
+    .high-light {
+      color: #fff;
+      background-color: rgba($color: orange, $alpha: 1);
+    }
+  }
+}

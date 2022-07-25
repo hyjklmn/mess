@@ -1,0 +1,61 @@
+.poker-page {
+  // width: 100%;
+  height: 100vh;
+  background-color: rgb(75, 102, 105);
+  // overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > div {
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    .poker-card {
+      width: 220px;
+      height: 300px;
+      background-color: #fff;
+      border-radius: 12px;
+      flex-shrink: 0;
+      margin: 8px;
+      font-family: "Jokerman";
+      position: absolute;
+      top: 0;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      user-select: none;
+      transition: top 0.15s linear;
+      font-size: 26px;
+
+      // &:hover {
+      //   top: -100px;
+      // }
+      p {
+        margin: 0;
+      }
+      .center-content {
+        width: 70%;
+        height: 75%;
+        border: 1px solid #000000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48%, -48%);
+        padding: 0 10px;
+        font-size: 56px;
+        box-sizing: border-box;
+        span {
+          position: absolute;
+        }
+        .icon {
+          top: -15px;
+        }
+        .num {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.search-widget {
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  input {
+    width: 0;
+    border: 0;
+    outline: 0;
+    height: 30px;
+    padding: 0;
+    transition: all 0.3s;
+  }
+  .input-active {
+    width: 150px;
+    padding: 5px;
+  }
+  & > div {
+    background-color: #fff;
+  }
+}

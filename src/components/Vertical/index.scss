@@ -1,0 +1,51 @@
+.vertical {
+  max-width: 100vw;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  overflow: hidden;
+  .left,
+  .right {
+    height: inherit;
+    font-size: 30px;
+    position: relative;
+    overflow: hidden;
+    .scroll-img {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(134, 104, 104);
+    }
+    & > .icon {
+      display: inline-block;
+      padding: 5px 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+      cursor: pointer;
+      position: absolute;
+      color: #e8e8e8;
+      &:hover {
+        border-color: #333;
+        color: #333;
+      }
+    }
+  }
+  .left {
+    width: 35%;
+    background-color: #999;
+    .icon {
+      right: 0;
+      top: 50%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+  .right {
+    width: 65%;
+    background-color: lightblue;
+    .icon {
+      top: calc(50% - 37px);
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}

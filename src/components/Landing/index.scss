@@ -1,0 +1,109 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+  div {
+    width: 50%;
+    height: 100%;
+    cursor: default;
+    transition: all 0.8s ease-out;
+    position: relative;
+    &:hover {
+      flex: 3;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    pre {
+      font-size: 60px;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      z-index: 10;
+      cursor: default;
+    }
+    button {
+      max-width: 200px;
+      height: 70px;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+      border: #fff solid 2px;
+      transition: all 0.5s;
+      overflow: hidden;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: all 0.5s;
+      }
+      &:hover {
+        &::after {
+          content: "";
+          width: 200px;
+          height: 200px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          color: #fff;
+          transform: translate(-50%, -50%);
+          opacity: 0.3;
+        }
+      }
+    }
+    .btn1 {
+      &:hover {
+        &::after {
+          background-color: rgba(43, 43, 43, 0.8);
+        }
+      }
+    }
+    .btn2 {
+      &:hover {
+        &::after {
+          background-color: rgba(87, 84, 236, 0.7);
+        }
+      }
+    }
+  }
+  .box1 {
+    flex: 1;
+    background: url("https://50projects50days.com/projects/split-landing-page/ps.jpg")
+      no-repeat;
+    background-size: cover;
+    &::after {
+      background-color: rgba(87, 84, 236, 0.7);
+    }
+  }
+  .box2 {
+    flex: 1;
+    background: url("https://50projects50days.com/projects/split-landing-page/xbox.jpg")
+      no-repeat;
+    background-size: cover;
+    &::after {
+      background-color: rgba(43, 43, 43, 0.8);
+    }
+  }
+}

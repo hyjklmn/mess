@@ -1,0 +1,40 @@
+.increment-page {
+  height: 100vh;
+  background-color: #8e44ad;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    li {
+      margin: 0;
+      padding: 0;
+      min-height: 180px;
+      margin-right: 30px;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      user-select: none;
+      cursor: pointer;
+      .logo {
+        font-size: 5rem;
+        margin: 0 auto;
+      }
+    }
+  }
+  button {
+    width: 200px;
+    height: 100px;
+    background-color: #8e44ad;
+    position: relative;
+  }
+}

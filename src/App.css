@@ -1,0 +1,137 @@
+/*base*/
+body {
+  background: #fff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #da4f49;
+  border: 1px solid #bd362f;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #bd362f;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.todo-container .todo-wrap {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.album-box {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  /* grid-auto-rows: minmax(100px, auto); */
+  /* justify-content: space-evenly; */
+}
+.album-item {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+.album-item img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+.filter {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+}
+.filter > img {
+  width: 100%;
+}
+.songer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.songer-btn {
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #bd362f;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.songer-input {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  outline: 0;
+  border: 0;
+  border-radius: 15px;
+  filter: opacity(5);
+}
+.songer-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 15px;
+}
+input[type="range"] {
+  width: 200px;
+}
+progress {
+  width: 200px;
+  height: 150px;
+}
+.label-list {
+  max-width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #fff; */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: rgb(123, 230, 185);
+}
+.icon-wrapper {
+  color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}

@@ -1,0 +1,43 @@
+.scroll-animate {
+  min-height: 100%;
+  overflow: hidden;
+  div {
+    height: 200px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    margin: 15px 0;
+    transform-origin: top left;
+    transform: translateX(400%);
+    transition: all 0.5s linear;
+  }
+  .scroll-active {
+    transform: translateX(0);
+  }
+  // .rotate-angle {
+  //   transform: rotate(45deg);
+  // }
+  .roate {
+    animation: identifier 1s ease-in-out;
+  }
+  @keyframes identifier {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    70% {
+      transform: rotate(35deg);
+    }
+
+    90% {
+      transform: rotate(40deg);
+    }
+
+    100% {
+      transform: rotate(48deg);
+    }
+  }
+}

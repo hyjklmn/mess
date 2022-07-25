@@ -1,0 +1,25 @@
+$w: 800px;
+$h: 800px;
+.board {
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .board-box {
+    width: $w;
+    height: $h;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 40px);
+    grid-template-rows: repeat(auto-fill, 40px);
+    div {
+      text-align: center;
+      display: inline-block;
+      background: rgb(29, 29, 29);
+      box-shadow: rgb(0 0 0) 0px 0px 2px;
+      margin: 2px;
+      cursor: pointer;
+    }
+  }
+}
