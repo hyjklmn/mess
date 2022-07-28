@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./index.scss";
 export default function index() {
   let c = [];
@@ -18,7 +18,7 @@ export default function index() {
     e.target.style.transition = ".8s ease";
     e.target.style.boxShadow = `#000 0px 0px 2px`;
   }
-  function randomColor(params) {
+  function randomColor() {
     const random = Math.floor(Math.random() * colors.length);
     return colors[random];
   }
@@ -26,11 +26,30 @@ export default function index() {
     e.preventDefault();
   }
   increment();
+
+  const Blocks = useRef([]);
+  function horseRaceLamp() {
+    Blocks.current.forEach((block, index) => {
+      setTimeout(() => {
+        block.style.background = randomColor();
+      }, 100 * index + 1);
+    });
+  }
+  useEffect(() => {
+    horseRaceLamp();
+  }, [Blocks]);
   return (
     <div className="board" onContextMenu={contextMenu}>
       <div className="board-box">
         {c.map((i) => {
-          return <div key={i} onMouseEnter={enter} onMouseLeave={leave}></div>;
+          return (
+            <div
+              key={i}
+              onMouseEnter={enter}
+              onMouseLeave={leave}
+              ref={(el) => (Blocks.current[i] = el)}
+            ></div>
+          );
         })}
       </div>
     </div>
