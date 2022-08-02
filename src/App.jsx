@@ -25,6 +25,7 @@ import Board from "./components/Board";
 import Poker from "./components/Poker";
 import RichEditor from "./components/RichEditor";
 import BarsControlVideo from "./components/BarsControlVideo";
+import IconEle from "./components/IconEle";
 export default class App extends Component {
   // state在哪,操作state的方法就在哪
   state = {
@@ -192,6 +193,7 @@ export default class App extends Component {
   render() {
     return (
       <>
+        <IconEle />
         <BarsControlVideo />
         <RichEditor />
         <Poker />

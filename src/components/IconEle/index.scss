@@ -1,0 +1,49 @@
+.icons-page {
+  position: relative;
+  .icon-title {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    svg {
+      width: 100px;
+      height: 100px;
+      &:active {
+        transform: scale(0.9);
+        box-shadow: inset 1px 1px 5px rgba($color: #000000, $alpha: 0.6);
+        border-radius: 10px;
+      }
+    }
+  }
+  .icon-page {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(158, 111, 129);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      height: 50px;
+      width: 50px;
+      margin: 5px;
+    }
+    .jess {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin: 0;
+      }
+      .rock-left {
+        transform: translateX(7px);
+      }
+      .rock-right {
+        transform: translateX(-6px) rotateY(180deg);
+      }
+    }
+  }
+}
