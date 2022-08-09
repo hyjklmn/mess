@@ -1,0 +1,41 @@
+.flash {
+  height: 100vh;
+  background-color: #000;
+  div.img-box {
+    width: 500px;
+    height: 750px;
+    position: relative;
+    left: 50%;
+    top: 10%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    &:hover {
+      &::after {
+        display: block;
+        animation: flash 2s linear infinite;
+      }
+    }
+    &::after {
+      content: "";
+      display: none;
+      width: 25px;
+      height: 150%;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: auto;
+      opacity: 0.5;
+      filter: blur(6px);
+      transform-origin: 450px 450px;
+    }
+    @keyframes flash {
+      0% {
+        transform: translate(-200px, -200px) rotate(45deg);
+      }
+      100% {
+        transform: translate(500px, 500px) rotate(45deg);
+      }
+    }
+  }
+}
