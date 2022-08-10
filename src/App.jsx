@@ -27,6 +27,7 @@ import RichEditor from "./components/RichEditor";
 import BarsControlVideo from "./components/BarsControlVideo";
 import IconEle from "./components/IconEle";
 import Flash from "./components/Flash";
+import Keyboard from "./components/Keyboard";
 export default class App extends Component {
   // state在哪,操作state的方法就在哪
   state = {
@@ -194,6 +195,7 @@ export default class App extends Component {
   render() {
     return (
       <>
+        <Keyboard />
         <Flash />
         <IconEle />
         <BarsControlVideo />

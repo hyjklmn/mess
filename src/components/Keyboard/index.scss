@@ -1,0 +1,44 @@
+.key-board {
+  height: 100vh;
+  background-color: rgba(239, 68, 68, 0.5);
+  input {
+    width: 550px;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: default;
+    font-size: 20px;
+  }
+  .key-board-wrapper {
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24px;
+    background-color: #fff;
+    border-radius: 5px;
+    .key {
+      width: calc(100% / 3);
+      height: calc(100% / 4);
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 3.3;
+      span {
+        background-color: rgba(156, 163, 175, 0.08);
+        border: 1px solid rgba(156, 163, 175, 0.08);
+        display: block;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        &:active {
+          background-color: rgba(156, 163, 175, 0.3);
+        }
+      }
+    }
+  }
+}
