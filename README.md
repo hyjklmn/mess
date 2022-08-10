@@ -4,4 +4,3 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/hyjklmn/mess)
 </br>
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=hyjklmn&repo=mess)](https://github.com/hyjklmn/mess)
-![](https://komarev.com/ghpvc/?username=hyjklmn)
