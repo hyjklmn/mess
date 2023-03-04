@@ -1,33 +1,37 @@
-import React, { Component, Fragment } from "react";
-import axios from "axios";
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import List from "./components/List";
-import Exercise from "./components/Exercise";
-import SearchWidget from "./components/SearchWidget";
-import RandomJokes from "./components/RandomJokes";
-import Loading from "./components/Loading";
-import Scroll from "./components/Scroll";
-import Landing from "./components/Landing";
-import Login from "./components/Login";
-import Comma from "./components/Comma";
-import AnimatedNav from "./components/AnimatedNav";
-import Increment from "./components/Increment";
-import Slider from "./components/Slider";
-import Drawing from "./components/Drawing";
-import Kinetic from "./components/Kinetic";
-import Vertical from "./components/Vertical";
-import Editor from "./components/Editor";
-import DoubleHeart from "./components/DoubleHeart";
-import AutoText from "./components/AutoText";
-import Board from "./components/Board";
-import Poker from "./components/Poker";
-import RichEditor from "./components/RichEditor";
-import BarsControlVideo from "./components/BarsControlVideo";
-import IconEle from "./components/IconEle";
-import Flash from "./components/Flash";
-import Keyboard from "./components/Keyboard";
+import React, { Component, Fragment } from "react"
+import axios from "axios"
+import "./App.css"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import List from "./components/List"
+import Exercise from "./components/Exercise"
+import SearchWidget from "./components/SearchWidget"
+import RandomJokes from "./components/RandomJokes"
+import Loading from "./components/Loading"
+import Scroll from "./components/Scroll"
+import Landing from "./components/Landing"
+import Login from "./components/Login"
+import Comma from "./components/Comma"
+import AnimatedNav from "./components/AnimatedNav"
+import Increment from "./components/Increment"
+import Slider from "./components/Slider"
+import Drawing from "./components/Drawing"
+import Kinetic from "./components/Kinetic"
+import Vertical from "./components/Vertical"
+import Editor from "./components/Editor"
+import DoubleHeart from "./components/DoubleHeart"
+import AutoText from "./components/AutoText"
+import Board from "./components/Board"
+import Poker from "./components/Poker"
+import RichEditor from "./components/RichEditor"
+import BarsControlVideo from "./components/BarsControlVideo"
+import IconEle from "./components/IconEle"
+import Flash from "./components/Flash"
+import Keyboard from "./components/Keyboard"
+import PasteShot from "./components/PasteShot"
+import AudioVisualization from "./components/AudioVisualization"
+// GASP
+import InertiaPlugin from "./components/GASP/InertiaPlugin"
 export default class App extends Component {
   // state在哪,操作state的方法就在哪
   state = {
@@ -44,7 +48,7 @@ export default class App extends Component {
     alphaBgc: "",
     alphaVal: 1,
     progressVal: 0.5,
-  };
+  }
   // addTodo = (todo) => {
   //   this.setState({
   //     todos: [
@@ -54,111 +58,111 @@ export default class App extends Component {
   //   });
   // };
   addTodo = (todoObj) => {
-    const { todos } = this.state;
-    const newTodos = [todoObj, ...todos];
-    this.setState({ todos: newTodos });
-  };
+    const { todos } = this.state
+    const newTodos = [todoObj, ...todos]
+    this.setState({ todos: newTodos })
+  }
   deleteTodo = (id) => {
-    const { todos } = this.state;
+    const { todos } = this.state
     const newTodos = todos.filter((todo) => {
-      return todo.id !== id;
-    });
-    this.setState({ todos: newTodos });
-  };
+      return todo.id !== id
+    })
+    this.setState({ todos: newTodos })
+  }
   changeCheck = (id, done) => {
-    const { todos } = this.state;
+    const { todos } = this.state
     const newTodos = todos.map((todo) => {
-      if (todo.id === id) return { ...todo, done };
-      else return todo;
-    });
-    this.setState({ todos: newTodos });
-  };
+      if (todo.id === id) return { ...todo, done }
+      else return todo
+    })
+    this.setState({ todos: newTodos })
+  }
   // 全选
   allChecked = (checked) => {
-    const { todos } = this.state;
+    const { todos } = this.state
     const newTodos = todos.map((todo) => {
-      return { ...todo, done: checked };
-    });
-    this.setState({ todos: newTodos });
-  };
+      return { ...todo, done: checked }
+    })
+    this.setState({ todos: newTodos })
+  }
   //全选删除
   clearAllTodo = () => {
-    const { todos } = this.state;
+    const { todos } = this.state
     const newTodos = todos.filter((todo) => {
-      return todo.done !== true;
-    });
+      return todo.done !== true
+    })
     // const newTodos = todos.map((todo) => {
-    this.setState({ todos: newTodos });
+    this.setState({ todos: newTodos })
     // });
-  };
+  }
   //
-  songRefs = [];
+  songRefs = []
   mouseenter(e, index) {
-    this.songRefs[index].style.display = "block";
+    this.songRefs[index].style.display = "block"
   }
   mouseleave(e, index) {
-    this.songRefs[index].style.display = "none";
+    this.songRefs[index].style.display = "none"
   }
   mousemove(e, index) {
-    const { offsetX: x, offsetY: y } = e.nativeEvent;
-    const width = this.songRefs[index].offsetWidth;
-    const height = this.songRefs[index].offsetHeight;
-    this.songRefs[index].style.left = x + "px";
-    this.songRefs[index].style.top = y + "px";
-    this.songRefs[index].style.backgroundPositionX = -x + "px";
-    this.songRefs[index].style.backgroundPositionY = -y + "px";
+    const { offsetX: x, offsetY: y } = e.nativeEvent
+    const width = this.songRefs[index].offsetWidth
+    const height = this.songRefs[index].offsetHeight
+    this.songRefs[index].style.left = x + "px"
+    this.songRefs[index].style.top = y + "px"
+    this.songRefs[index].style.backgroundPositionX = -x + "px"
+    this.songRefs[index].style.backgroundPositionY = -y + "px"
     if (x <= width / 2) {
-      this.songRefs[index].style.left = width / 2 + "px";
+      this.songRefs[index].style.left = width / 2 + "px"
     }
     if (y <= height / 2) {
-      this.songRefs[index].style.top = height / 2 + "px";
+      this.songRefs[index].style.top = height / 2 + "px"
     }
     if (x >= width + width / 2) {
-      this.songRefs[index].style.left = width + width / 2 + "px";
+      this.songRefs[index].style.left = width + width / 2 + "px"
     }
     if (y >= height + height / 2) {
-      this.songRefs[index].style.top = height + height / 2 + "px";
+      this.songRefs[index].style.top = height + height / 2 + "px"
     }
   }
   //
 
   postSonger = async () => {
-    console.log(this.state.sex);
-    let result = await axios.get(`/api/artist/list?type=${this.state.sex}`);
-    console.log(result);
-    this.setState({ erList: result.data.artists });
-  };
+    console.log(this.state.sex)
+    let result = await axios.get(`/api/artist/list?type=${this.state.sex}`)
+    console.log(result)
+    this.setState({ erList: result.data.artists })
+  }
   things = (e) => {
     if (e.target.checked) {
-      this.setState({ sex: e.target.value });
+      this.setState({ sex: e.target.value })
     }
-  };
+  }
   colorChange = (e) => {
-    this.setState({ dycBgc: e.target.value });
+    this.setState({ dycBgc: e.target.value })
     this.setState({
       alphaBgc: this.hexToRgba(e.target.value, this.state.progressVal),
-    });
-  };
+    })
+  }
   colorClick = (e) => {
-    console.log(e);
-  };
+    console.log(e)
+  }
   // rangechange
   rangeChange = (e) => {
-    this.setState({ progressVal: e.target.value / 100 });
-    if (this.state.dycBgc === "#ffffff") return;
+    this.setState({ progressVal: e.target.value / 100 })
+    if (this.state.dycBgc === "#ffffff") return
     this.setState({
       alphaBgc: this.hexToRgba(this.state.dycBgc, this.state.progressVal),
-    });
-  };
+    })
+  }
 
   hexToRgba(hex, opacity) {
-    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
     hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-      return r + r + g + g + b + b;
-    });
+      return r + r + g + g + b + b
+    })
 
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    opacity = opacity >= 0 && opacity <= 1 ? Number(opacity) : 1;
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+    opacity = opacity >= 0 && opacity <= 1 ? Number(opacity) : 1
     return result
       ? "rgba(" +
           [
@@ -168,33 +172,36 @@ export default class App extends Component {
             opacity,
           ].join(",") +
           ")"
-      : hex;
+      : hex
   }
   //
-  upToTop = React.createRef();
+  upToTop = React.createRef()
   scrollToTop() {
-    const _this = this;
+    const _this = this
     window.addEventListener("scroll", function (e) {
-      const h = document.documentElement.scrollTop;
+      const h = document.documentElement.scrollTop
       if (h >= 1000) {
-        _this.upToTop.current.style.zIndex = 1000;
+        _this.upToTop.current.style.zIndex = 1000
       } else {
-        _this.upToTop.current.style.zIndex = -999;
+        _this.upToTop.current.style.zIndex = -999
       }
-    });
+    })
   }
   toTop = () => {
-    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" })
+  }
   componentDidMount() {
     axios.get("/api/top/song").then((res) => {
-      this.setState({ songList: res.data.data });
-    });
-    this.scrollToTop();
+      this.setState({ songList: res.data.data })
+    })
+    this.scrollToTop()
   }
   render() {
     return (
       <>
+        <AudioVisualization />
+        <InertiaPlugin />
+        <PasteShot />
         <Keyboard />
         <Flash />
         <IconEle />
@@ -284,7 +291,7 @@ export default class App extends Component {
                 <img src={er.img1v1Url + "?param=200y200"} alt={er.name} />
                 <p style={{ textAlign: "center" }}>{er.name}</p>
               </div>
-            );
+            )
           })}
         </div>
         <div
@@ -295,7 +302,7 @@ export default class App extends Component {
           {this.state.songList.map((song, index) => {
             let bgi = {
               backgroundImage: `url(${song.album.blurPicUrl}?param=200y200)`,
-            };
+            }
             return (
               <Fragment key={song.id}>
                 <div
@@ -316,7 +323,7 @@ export default class App extends Component {
                   ></div>
                 </div>
               </Fragment>
-            );
+            )
           })}
         </div>
         <div
@@ -327,6 +334,6 @@ export default class App extends Component {
           <div className="i-carbon-up-to-top"></div>
         </div>
       </>
-    );
+    )
   }
 }

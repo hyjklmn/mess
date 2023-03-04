@@ -1,0 +1,24 @@
+.visual {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  canvas {
+    width: 100%;
+    height: 100vh;
+  }
+  audio {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    // opacity: 0.15;
+    transition: opacity 0.5s;
+  }
+  audio:hover {
+    opacity: 1;
+  }
+  button {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+  }
+}

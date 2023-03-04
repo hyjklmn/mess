@@ -17,6 +17,7 @@
     "@tiptap/react": "^2.0.0-beta.114",
     "@tiptap/starter-kit": "^2.0.0-beta.191",
     "axios": "^0.27.2",
+    "gsap": "^3.11.4",
     "monaco-editor": "^0.33.0",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",

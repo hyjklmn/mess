@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import "./index.scss";
+import React, { useRef } from "react"
+import "./index.scss"
 import {
   IconIcons,
   IconAlien,
@@ -18,25 +18,20 @@ import {
   IconThumbUp,
   IconTie,
   IconSword,
-} from "@tabler/icons";
-import colors from "../../assets/colors";
+} from "@tabler/icons"
+import { randomColor } from "../../utils"
 export default function index() {
-  const color = colors();
-  const father = useRef();
-  setTimeout(coloring, 10);
-  function coloring(params) {
-    const children = father.current && father.current.children;
+  const father = useRef()
+  setTimeout(coloring, 10)
+  function coloring() {
+    const children = father.current && father.current.children
     for (let icon of children) {
-      icon.style.color = randomColor();
+      icon.style.color = randomColor()
     }
   }
-  function randomColor() {
-    const length = color.length;
-    const num = Math.floor(Math.random() * length);
-    return color[num];
-  }
+
   function changeColor() {
-    coloring();
+    coloring()
   }
   return (
     <div className="icons-page">
@@ -65,5 +60,5 @@ export default function index() {
         <IconSword />
       </div>
     </div>
-  );
+  )
 }
